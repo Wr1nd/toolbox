@@ -1,0 +1,34 @@
+[Unit]
+Description=Muggle Toolbox private LAN/VPN workbench
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=muggle-toolbox
+Group=muggle-toolbox
+WorkingDirectory=/opt/muggle-toolbox
+Environment=PATH=/opt/muggle-toolbox/bin:/opt/muggle-toolbox/.venv/bin:/usr/bin:/bin
+Environment=PLAYWRIGHT_BROWSERS_PATH=/opt/muggle-toolbox/browsers
+Environment=HOME=/var/lib/muggle-toolbox
+ExecStart=/opt/muggle-toolbox/.venv/bin/uvicorn app:app --host 192.168.31.150 --port 5082 --no-proxy-headers
+Restart=on-failure
+RestartSec=3
+StateDirectory=muggle-toolbox
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+CapabilityBoundingSet=
+MemoryMax=2G
+TasksMax=256
+CPUQuota=200%
+LimitFSIZE=536870912
+
+[Install]
+WantedBy=multi-user.target

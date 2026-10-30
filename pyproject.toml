@@ -1,0 +1,20 @@
+[project]
+name = "muggle-toolbox"
+version = "1.0.0"
+description = "Private LAN/VPN utility workbench"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn>=0.34",
+    "python-multipart>=0.0.20",
+    "pillow>=11",
+    "pypdf>=6",
+    "qrcode>=8",
+    "playwright>=1.50",
+    "yt-dlp[default]>=2026.1",
+    "httpx>=0.28",
+    "pytest>=8",
+    "httpx2>=2.16.0",
+]
+[tool.pytest.ini_options]
+pythonpath = ["."]
