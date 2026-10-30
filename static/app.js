@@ -45,7 +45,7 @@
     document.getElementById('tool-description').textContent = tool.description;
     document.getElementById('tool-note').textContent = tool.note;
     document.getElementById('heading-icon').innerHTML = svg(key);
-    document.title = `${tool.title} · Text Box`;
+    document.title = `${tool.title} · Tool Box`;
     form.innerHTML = `${tool.form()}<button class="submit" type="submit">${svg(key)}<span>${tool.action}</span><span aria-hidden="true">↗</span></button><div class="form-bottom"><span aria-hidden="true">✧</span> A useful little thing, without the fuss.</div>`;
     empty();
     if (key === 'pdf') form.elements.operation.addEventListener('change', updatePDF);

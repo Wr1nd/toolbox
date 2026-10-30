@@ -1,4 +1,4 @@
-# Text Box
+# Tool Box
 
 A self-hosted utility workbench for a trusted LAN/WireGuard network. FastAPI backend, vanilla HTML/CSS/JavaScript frontend, no external UI assets or analytics.
 
