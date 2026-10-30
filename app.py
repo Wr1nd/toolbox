@@ -42,7 +42,7 @@ async def upload(file):
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-app = FastAPI(title='Muggle Toolbox', docs_url=None, redoc_url=None)
+app = FastAPI(title='Text Box', docs_url=None, redoc_url=None)
 
 @app.post('/api/text')
 def text_tool(operation: str = Form(...), text: str = Form('')):
